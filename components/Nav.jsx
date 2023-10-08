@@ -39,22 +39,22 @@ const Nav = () => {
 			<div className="hidden sm:flex">
 				{session?.user ? (
 					<div className="flex gap-3 md:gap-5">
-						<Link href={"/create-prompt"} className="black_btn">
-							Create Post
+						<Link href={"/create-prompt"} className="outline_btn">
+							Create Prompt
 						</Link>
 
 						<button
 							type="button"
 							id="user-sign-out"
 							onClick={signOut}
-							className="outline_btn"
+							className="black_btn"
 						>
 							Sign Out
 						</button>
 
 						<Link href={"/profile"}>
 							<Image
-								src={"/assets/images/logo.svg"}
+								src={session?.user.image}
 								width={37}
 								height={37}
 								alt="Profile"
@@ -86,7 +86,7 @@ const Nav = () => {
 				{session?.user ? (
 					<div className="flex">
 						<Image
-							src={"/assets/images/logo.svg"}
+							src={session?.user.image}
 							width={37}
 							height={37}
 							alt="Profile"
