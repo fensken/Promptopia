@@ -19,8 +19,8 @@ const MyProfile = () => {
 	};
 
 	useEffect(() => {
-		fetchPosts();
-	}, []);
+		if (session?.user.id) fetchPosts();
+	},[session?.user.id]);
 
 	const handleEdit = () => {};
 
