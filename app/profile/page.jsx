@@ -20,10 +20,10 @@ const MyProfile = () => {
 
 	useEffect(() => {
 		if (session?.user.id) fetchPosts();
-	},[session?.user.id]);
+	}, [session?.user.id]);
 
 	const handleEdit = (post) => {
-		router.push(`/update-prompt?id=${post._id}`)
+		router.push(`/update-prompt?id=${post._id}`);
 	};
 
 	const handleDelete = async (post) => {
@@ -33,15 +33,15 @@ const MyProfile = () => {
 
 		if (hasConfirmed) {
 			try {
-				await fetch(`/api/users/${post?.id.toString()}/posts`, {
-					method: DELETE
+				await fetch(`/api/prompt/${post?._id.toString()}`, {
+					method: "DELETE",
 				});
 
 				const filteredPosts = myPosts.filter((item) => item._id !== post._id);
 
 				setMyPosts(filteredPosts);
 			} catch (error) {
-				console.log(error)
+				console.log(error);
 			}
 		}
 	};
