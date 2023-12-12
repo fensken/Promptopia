@@ -1,4 +1,4 @@
-# Promptopia
+### Promptopia
 
 ![image](https://github.com/fensken/Promptopia/assets/57618183/f2762697-0e15-44ad-89a4-e4b25a194e8d)
 
